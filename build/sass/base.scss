@@ -1,4 +1,9 @@
 @charset "UTF-8";
 
-@import "reset";
-@import "core";
+@import "variables";
+@import "mixins";
+
+@import "flex";
+@inport "theme";
+@import "text";
+@import "border";
