@@ -2,23 +2,45 @@ doctype html
 html(lang="zh")
   head
     title pageTitle
-    link(rel='stylesheet',type='text/css',href='css/base.css')
+    meta(charset="utf-8")
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    link(rel='stylesheet',type='text/css',href='libs/jquery/jquery.mobile-1.4.3.min.css')
+    link(rel='stylesheet',type='text/css',href='css/base.min.css')
+    link(rel='stylesheet',type='text/css',href='css/main.min.css')
   body
-    h1 Jade - node template engine
-    #container.col
-      if youAreUsingJade
-        p You are amazing
-      else
-        p Get on it!
-      p.
-        Jade is a terse and simple
-        templating language with a
-        strong focus on performance
-        and powerful features.
-      .fe-flex-box
-        .flex1 this is a
-        .flex2 this is b
-        .flex2 this is c
+    #index(data-role='page')
+      .header(data-role='header',data-tap-toggle="false",data-position="fixed")
+        h2 require learn
+      .ui-content(data-role='main')      
+        .require
+          h2 require learn
+          #box1 this is my box1 
+          #box2 this is my box2
+          #box3 this is my box3
+          ul
+            -for(var x=0;x<10;x++)
+              li item -x 
+                -var a=5;
+                case a
+                  when 10
+                    img
+                  when 0
+                    a
+                  default 
+                    p ni mei mei de  daye
+        b this is my file require learn
+        a(data-role="button") 打开
+        a(data-role="none") login in
+        a#open(w-role="button",data-role="none") open 
+        #dialog
+        #test
+          b this is my test file
+        pre dfadfasdfffffffffffffffffffffffffffffffff
 
 
+      .footer(data-role='footer',data-tap-toggle="false",data-position="fixed")
+        h2 require learn footer
+
+    script(src='libs/jquery/jquery.min.js')
+    script(src='libs/jquery/jquery.mobile-1.4.3.min.js')
     script(data-main='js/main',src='js/require.js')

@@ -1,43 +1,21 @@
 requirejs.config({
-	baseUrl: 'js/lib',
+	baseUrl: 'js/main',
 	paths: {
-		main: '../main',
-		btn: '../main/btn'
+		'jquery': '../../libs/jquery/jquery.min',
+		'jqueryMobile': '../../libs/jquery/jquery.mobile-1.4.3.min'
 	},
 	skim: {
 
 	}
 });
 
-requirejs(['jquery', 'main'], function($, main) {
+require(['btn','alert','open'], function(btn) {
 
-	alert('nimei meimei');
-
-	console.log('today is beauty day !');
-
-	//mothod1();
-
-	//mothod2();
-
-	console.log(main);
-
-});
+	var btn=btn;
 
 
+	console.log(btn);
 
-requirejs(['btn'], function(btn) {
-
-	console.log('nimei');
-
-	btn.mothod1();
-});
-
-
-requirejs(['../main/alert'], function(alert) {
-
-	alert.meg_one();
-
-
-	alert.meg_two();
+	btn('red');
 
 });

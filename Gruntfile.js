@@ -1,4 +1,4 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         jshint: {
@@ -11,16 +11,16 @@ module.exports = function (grunt) {
         //     },
         //     dist: {
         //         src: ['build/js/**/*.js'],
-        //         dest: 'js/<%= pkg.name %>.js'
+        //         dest: 'js/main.js'
         //     }
         // },
         // uglify: {
         //     options: {
-        //         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        //         banner: '/*! main <%= grunt.template.today("dd-mm-yyyy") %> */\n'
         //     },
         //     dist: {
         //         files: {
-        //             'js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+        //             'js/main.min.js': ['<%= concat.dist.dest %>']
         //         }
         //     }
         // },
@@ -32,14 +32,21 @@ module.exports = function (grunt) {
                 },
                 files: {
                     'css/base.min.css': 'build/sass/base.scss',
-                    'css/<%= pkg.name %>.min.css': 'build/sass/<%= pkg.name %>.scss'
+                    'css/main.min.css': 'build/sass/main.scss'
                 }
             }
         },
         jade: {
             compile: {
+                options: {
+                    data: {
+                        debug: false
+                    },
+                    pretty: true
+                },
                 files: {
-                    'index.html': 'build/page/index.jade'
+                    'index.html': 'build/page/index.jade',
+                    'page/dialog.html': 'build/page/dialog.jade'
                 }
             }
         },
@@ -49,8 +56,8 @@ module.exports = function (grunt) {
                 tasks: ['sass']
             },
             jade: {
-                 files: ['build/page/**/*.jade'],
-                 tasks: ['jade']
+                files: ['build/page/**/*.jade'],
+                tasks: ['jade']
             }
         }
     });

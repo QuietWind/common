@@ -1,20 +1,9 @@
-define(
-	function() {
-		return {
-			mothod1: function() {
-				console.log("this is mothod one");
-			},
-			mothod2: function() {
-				console.log('this is mothod two');
-			}
-		}
-	}
-);
-
-
-
 define(['jquery'], function($) {
 
-	$('body div').css('background', '#f34');
+	return function changeBgColor(color) {
+
+		console.log($('body'));
+		$('.ui-content').css({'background':color});
+	}
 
 });

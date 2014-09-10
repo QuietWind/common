@@ -1,10 +1,15 @@
-define(['jquery'], function() {
-	return {
-		meg_one: function() {
-			alert('one meg to show');
-		},
-		meg_two: function() {
-			alert('two two');
-		}
-	}
+define(['jquery', 'http://192.168.1.122/git/common/js/main/js.json'], function($, data) {
+
+
+	var showName = function() {
+
+		console.log('chenhuan');
+
+	};
+
+	showName();
+
+	console.log(data);
+
+
 });
